@@ -11,20 +11,16 @@ $ npm i obj-emojify
 ## Usage
 
 ```js
-const ObjEmojify = require('obj-emojify');
-const objEmojify = new ObjEmojify();
-const firstEmojify = objEmojify.emojify({foo: 'bar'}, (value) => console.log(value));
-const secondEmojify = objEmojify.emojify({foo: 'bar'});
-/*
-Output:
+const { ObjEmojify } = require('obj-emojify');
 
-*/
+const objEmojify = new ObjEmojify();
+const firstEmojify = objEmojify.emojify({foo: 'bar'}, (value) => { /* TODO: value */ });
+const secondEmojify = objEmojify.emojify({foo: 'bar'});
 ```
 
 ## Configuration
 
-To enable global configuration define the options.
-The following illustrates all the available options with their respective default values.
+To enable global configuration define the options.The following illustrates all the available options with their respective default values.
 
 ```json
 {

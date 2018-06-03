@@ -23,7 +23,7 @@ class ObjEmojify {
             ]
         );
 
-        if (cb) return cb(objEmojify);
+        if (cb) return cb(null, objEmojify);
         else return objEmojify;
     }
 }
