@@ -1,4 +1,4 @@
-# ObjEmojify [![Build Status](https://travis-ci.org/sindresorhus/map-obj.svg?branch=master)](https://travis-ci.org/rjoydip/obj-emojify)
+# ObjEmojify [![Build Status](https://travis-ci.org/rjoydip/obj-emojify.svg?branch=master)](https://travis-ci.org/rjoydip/obj-emojify)
 
 > Emojify object keys and values into a new emojify object.
 
