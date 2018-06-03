@@ -168,7 +168,6 @@ test('ObjEmojify with callback, blank option', () => {
     });
 });
 
-
 test('ObjEmojify with return, blank option, ES6 object literal', () => {
     const objEmojify = new ObjEmojify({});
     const { error, value } = objEmojify.emojify({ "coffee": "I :heart: coffee value" });
@@ -181,6 +180,51 @@ test('ObjEmojify with return, blank option, ES6 object literal', () => {
 test('ObjEmojify with callback, blank option', () => {
     const objEmojify = new ObjEmojify({});
     objEmojify.emojify({ "coffee": "I :heart: coffee value" }, (emojify) => {
+        if (emojify.error) {
+            expect(() => {
+                throw new Error(emojify.error);
+            }).toThrow();
+        } else {
+            expect(emojify.value).toEqual({ "coffee": "I :heart: coffee value" });
+        }
+    });
+});
+
+test('ObjEmojify with return, blank option, ES6 object literal, null value', () => {
+    const objEmojify = new ObjEmojify({});
+    const { error, value } = objEmojify.emojify("");
+    expect(() => {
+        throw new Error(error);
+    }).toThrow();
+    expect(value).toEqual(null);
+});
+
+test('ObjEmojify with callback, blank option, null value', () => {
+    const objEmojify = new ObjEmojify({});
+    objEmojify.emojify("", (emojify) => {
+        if (emojify.error) {
+            expect(() => {
+                throw new Error(emojify.error);
+            }).toThrow();
+        } else {
+            expect(emojify.value).toEqual({ "coffee": "I :heart: coffee value" });
+        }
+    });
+});
+
+
+test('ObjEmojify with return, blank option, ES6 object literal, blank array', () => {
+    const objEmojify = new ObjEmojify({});
+    const { error, value } = objEmojify.emojify([]);
+    expect(() => {
+        throw new Error(error);
+    }).toThrow();
+    expect(value).toEqual(null);
+});
+
+test('ObjEmojify with callback, blank option, blank array', () => {
+    const objEmojify = new ObjEmojify({});
+    objEmojify.emojify("", (emojify) => {
         if (emojify.error) {
             expect(() => {
                 throw new Error(emojify.error);
