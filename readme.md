@@ -15,7 +15,8 @@ const ObjEmojify = require('obj-emojify');
 const objEmojify = new ObjEmojify();
 const firstEmojify = objEmojify.emojify({foo: 'bar'}, (value) => console.log(value));
 const secondEmojify = objEmojify.emojify({foo: 'bar'});
-/* Output:
+/*
+Output:
 
 */
 ```
