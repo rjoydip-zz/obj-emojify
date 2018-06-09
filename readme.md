@@ -12,10 +12,20 @@ $ npm i obj-emojify
 
 ```js
 const { ObjEmojify } = require('obj-emojify');
-
+const obj = {
+    "coffee": "I :heart: coffee value",
+    "100": {
+        "name": "100",
+        "contents": {
+            "name": "funny",
+            "contents": [1, 2]
+        }
+    },
+    "santa": ":santa: value"
+};
 const objEmojify = new ObjEmojify();
-const firstEmojify = objEmojify.emojify({foo: 'bar'}, (value) => { /* TODO: value */ });
-const secondEmojify = objEmojify.emojify({foo: 'bar'});
+const firstEmojify = objEmojify.emojify(obj, (result) => { /* TODO: result.value */ });
+const secondEmojify = objEmojify.emojify(obj); // output: secondEmojify.value
 ```
 
 ## Configuration
