@@ -10,7 +10,11 @@
     "emojify",
     "json-emojify"
   ],
-  "author": "Joydip Roy (rjoydip)",
+  "repository": "rjoydip/obj-emojify",
+  "author": {
+    "name": "Joydip Roy",
+    "email": "joydipand@gmail.com"
+  },
   "license": "MIT",
   "dependencies": {
     "map-obj": "^2.0.0",
